@@ -1,10 +1,10 @@
 <?php
 namespace Modules\Auth\Http\Controllers;
 
-use Modules\User\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Modules\Auth\Http\Requests\LoginRequest;
+use Modules\User\Models\User;
 
 class LoginController extends Controller
 {

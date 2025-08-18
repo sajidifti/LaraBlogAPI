@@ -31,7 +31,6 @@ return new class extends Migration {
     {
         Schema::create('{$this->guessTableName($name)}', function (Blueprint \$table) {
             \$table->id();
-            \$table->string('name');
             \$table->timestamps();
         });
     }

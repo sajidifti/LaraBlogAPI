@@ -30,6 +30,16 @@ class ModuleServiceProvider extends ServiceProvider
                 $this->loadMigrationsFrom($migrationPath);
             }
         }
+
+        // Registering module views
+        foreach (glob(base_path('Modules/*')) as $modulePath) {
+            $moduleName = basename($modulePath);
+            $viewPath   = $modulePath . '/Resources/views';
+
+            if (is_dir($viewPath)) {
+                $this->loadViewsFrom($viewPath, $moduleName);
+            }
+        }
     }
 
     /**
